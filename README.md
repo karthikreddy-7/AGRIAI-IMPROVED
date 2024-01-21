@@ -1,5 +1,5 @@
 # AGRIAI-IMPROVED
 
 
-![My Image](Flow chart.png)
+![My Image](FlowChart.png)
 ![My Image](LANDINGPAGE.png)
