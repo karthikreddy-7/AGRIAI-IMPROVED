@@ -1,11 +1,22 @@
 import logo from "./logo.svg";
 import "./App.css";
+import NavBar from "./NavBar";
+import bgheader from "./assets/img/bgheader.jpg";
 
 function App() {
   return (
-    <div className="bg-blue-500 text-white p-4 text-4xl">
-      This is a component using Tailwind CSS!
-    </div>
+    <>
+      <div className="bg-black-100">
+        <div className="fixed inset-0 overflow-hidden">
+          <img
+            src={bgheader}
+            className="w-full h-full object-cover"
+            alt="Background Header"
+          />
+        </div>
+        <NavBar />
+      </div>
+    </>
   );
 }
 
