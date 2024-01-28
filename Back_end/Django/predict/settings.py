@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-cy8#dqlg-&63$)x!gsl)5z9^5k_rgi8_454bf0rms@mat-(kc^"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app", "now.sh", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,7 +56,7 @@ ROOT_URLCONF = "predict.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -76,15 +77,16 @@ WSGI_APPLICATION = "predict.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "railway",
-        "USER": "postgres",
-        "PASSWORD": "gbc*d-53AECc-Ad3324b1eEaFgAfE25c",
-        "HOST": "roundhouse.proxy.rlwy.net",
-        "PORT": "58539",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
+# database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(
+    "postgres://agriaibackend_user:8c30E4gHuTL0sBUIjPD1LemByMRpPWi3@dpg-cmr4lvi1hbls73fn8lr0-a.oregon-postgres.render.com/agriaibackend"
+)
+#
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -126,5 +128,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
