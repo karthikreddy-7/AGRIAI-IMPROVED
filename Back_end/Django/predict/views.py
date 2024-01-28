@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .forms import ImageUploadForm
 from django.core.files.storage import FileSystemStorage
 
-potato = tf.keras.models.load_model("/MLModels/Potato_Model")
+potato = tf.keras.models.load_model("./Potato_Model")
 
 EXPECTED_SHAPE = (256, 256, 3)
 
