@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./NavBar";
 import bgheader from "./assets/img/bgheader.jpg";
+import First from "./sections/first";
 
 function App() {
   return (
@@ -20,7 +21,6 @@ function App() {
             <div>AGRICULTURE</div>
             <div>& AI</div>
           </div>
-
           <div className=" absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-white text-sm font-bold">
             <div>A Groundbreaking Initiative That Harnesses The Power</div>
             <div>
@@ -38,8 +38,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div>
-        <button className="btn">hello</button>
+      <div className="bg-green-100  h-screen w-full">
+        <First />
       </div>
     </>
   );
