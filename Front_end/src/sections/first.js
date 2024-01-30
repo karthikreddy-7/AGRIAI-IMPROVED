@@ -15,7 +15,7 @@ const First = () => {
           <p className="text-xl font-semibold text-green-600 font-serif ml-2 mb-10">
             What All Can AGRI AI Do?
           </p>
-          <button className="m-10 font-bold btn btn-ghost rounded-full w-2/3 text-white  bg-green-500 font-mono ">
+          <button className="m-10 font-bold btn btn-ghost rounded-full w-2/3 text-white  bg-green-600 font-mono ">
             {" "}
             Learn More{"     "}
           </button>
