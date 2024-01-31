@@ -8,7 +8,26 @@ import Model1 from "./sections/Model1";
 import Model2 from "./sections/Model2";
 import Model3 from "./sections/Model3";
 import Disc from "./sections/Disc";
+import { useEffect, useState } from "react";
 function App() {
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const shouldScrolling = scrollTop > 0;
+
+      if (shouldScrolling !== scrolling) {
+        setScrolling(shouldScrolling);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolling]);
   return (
     <>
       <div className="bg-emerald-100 flex flex-col">
@@ -38,7 +57,13 @@ function App() {
                 VIEW SOURCE CODE{" "}
               </button>
             </div>
-            <div className="bg-emerald-100 rounded-xl shadow-md box-border h-16 w-11/12 absolute top-6 left-12">
+            <div
+              className={`fixed bg-emerald-100 rounded-xl shadow-md box-border h-16 min-w-[90vw] top-6 left-14 transition-all ${
+                scrolling
+                  ? "opacity-60 transform -translate-y-10"
+                  : "opacity-100 transform translate-y-0"
+              }`}
+            >
               <NavBar />
             </div>
           </div>
@@ -49,7 +74,7 @@ function App() {
         <div className=" mt-24 h-full w-full">
           <Cards />
         </div>
-        <div className="bg-emerald-100 h-screen w-full mt-10">
+        <div className="bg-emerald-100 h-screen min-w-[90vw] mt-10">
           <h1 className="text-green-600 font-extrabold font-mono text-2xl m-8">
             HOW DOES THE PROCESS WORK?
           </h1>

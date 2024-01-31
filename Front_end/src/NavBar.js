@@ -4,7 +4,7 @@ import icon from "./assets/img/crop.png";
 const NavBar = () => {
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
         <div className="flex items-center ml-10">
           <img src={icon} className="object-contain w-8 mr-2" />
           <div className="text-2xl text-green-600 font-extrabold font-sans">
