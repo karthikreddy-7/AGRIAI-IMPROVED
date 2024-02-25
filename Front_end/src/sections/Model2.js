@@ -215,7 +215,7 @@ export default function Model2() {
 
   return (
     <div className="flex items-start justify-center h-screen w-full ">
-      {!loading ? (
+      {loading ? (
         <div className="flex flex-col p-6 bg-green-700 min-h-[80vh] min-w-[90vw] rounded-xl justify-center items-center gap-8">
           <span className="loading loading-spinner loading-lg text-green-100"></span>
         </div>
