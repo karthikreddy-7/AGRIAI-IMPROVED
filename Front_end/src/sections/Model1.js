@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import bg2 from "../assets/img/bg2.jpg";
 
 function Form({ onSubmit }) {
   const [formValues, setFormValues] = useState({
@@ -138,18 +139,41 @@ function ResultCard({ result, onBack }) {
         <div className="text-2xl text-white font-extrabold m-4 flex justify-center">
           CROP RECOMMENDATION SYSTEM
         </div>
+        <div className="flex flex-row">
+          {/* First Column (Image) */}
+          <div className="w-full md:w-1/2 py-4">
+            <img
+              src={bg2}
+              alt="Image Description"
+              className="w-full h-[calc(100vh-300px)] rounded-2xl"
+            />
+          </div>
 
-        <div className="flex flex-row justify-center items-center">
-          <div>{result}</div>
-          <button
-            className="btn btn-square btn-ghost text-base m-3 font-bold text-white w-80 h-16 flex justify-center items-center rounded-md"
-            style={{
-              background: "linear-gradient(to right, #00441b, #00a74a)",
-            }}
-            onClick={onBack}
-          >
-            Go Back
-          </button>
+          {/* Vertical Line */}
+          <div className="ml-10 hidden md:block w-0.5 bg-white h-[calc(100vh-240px)] rounded-lg"></div>
+
+          {/* Second Column (Text) */}
+          <div className="w-full md:w-1/2 p-8">
+            <div className="text-2xl font-bold text-white text-center">
+              {result}
+            </div>
+            <p className="mt-4 text-xl text-white justify-center text-center">
+              The result predicted may not be accurate. it is a approximate
+              choice one can choose and it may vary depending upon several
+              factors. Predicted outcome is based on the past data and choosed
+              with limited factors only. this is not be taken as the primary
+              choice.
+            </p>
+            <button
+              className="btn btn-square text-center btn-ghost text-base m-4 ml-10 font-bold text-white w-80 h-16 flex justify-center items-center rounded-md"
+              style={{
+                background: "linear-gradient(to right, #00441b, #00a74a)",
+              }}
+              onClick={onBack}
+            >
+              Go Back
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -177,12 +201,11 @@ const Model1 = () => {
       const data = await response.json();
       setTimeout(() => {
         setResponse(data.result);
-        setLoading(false);
-      }, 2000);
+        setLoading(false); // Turn off loading after response
+      }, 9000);
     } catch (error) {
       console.error("Error:", error);
-    } finally {
-      setLoading(false);
+      setLoading(false); // Turn off loading in case of error
     }
   };
 

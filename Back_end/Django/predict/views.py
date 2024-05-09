@@ -10,6 +10,7 @@ from .forms import ImageUploadForm
 from django.core.files.storage import FileSystemStorage
 
 potato = tf.keras.models.load_model("./Potato_Model")
+apple = tf.keras.models.load_model("./Apple_Model")
 
 EXPECTED_SHAPE = (256, 256, 3)
 
