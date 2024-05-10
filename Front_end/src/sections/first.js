@@ -27,7 +27,9 @@ const First = () => {
               alt="Image 1"
               className="w-4/5 h-3/4 object-cover rounded-xl"
             />
-            <p className="text-xl font-semibold p-2">Description 1</p>
+            <p className="text-xl font-semibold p-2">
+              CROP RECCOMMENDATION SYSTEM
+            </p>
             <p>
               Using nitrogen, potassium, phosphorous levels, temperature,
               humidity, and pH of the soil.predicts the most suitable crop
@@ -42,7 +44,14 @@ const First = () => {
               alt="Image 2"
               className="w-4/5 h-3/4 object-cover rounded-xl"
             />
-            <p className="text-xl font-semibold p-2">Description 2</p>
+            <p className="text-xl font-semibold p-2">
+              FERTILIZER PREDICTION SYSTEM
+            </p>
+            <p>
+              Using nitrogen, potassium, phosphorous levels, temperature,
+              humidity, and pH of the soil.predicts the most suitable fertilizer
+              varieties that can be grown, ensuring optimal yield.
+            </p>
           </div>
           <div>
             <img
@@ -50,7 +59,11 @@ const First = () => {
               alt="Image 3"
               className="w-4/5 h-3/4 object-cover rounded-xl"
             />
-            <p className="text-xl font-semibold p-2">Description 3</p>
+            <p className="text-xl font-semibold p-2">Disease Detection</p>
+            <p>
+              Detects the type of disease the plant is having based on the
+              uploaded image.
+            </p>
           </div>
         </div>
       </div>

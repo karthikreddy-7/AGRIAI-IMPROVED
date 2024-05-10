@@ -71,9 +71,6 @@ function App() {
         <div className="bg-emerald-100 mt-10  h-screen w-full">
           <First />
         </div>
-        <div className=" mt-24 h-full w-full">
-          <Cards />
-        </div>
         <div className="bg-emerald-100 h-screen min-w-[90vw] mt-10">
           <h1 className="text-green-600 font-extrabold font-mono text-2xl m-8">
             HOW DOES THE PROCESS WORK?
